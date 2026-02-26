@@ -15737,3 +15737,8 @@ img {
         opacity: 1;
     }
 }
+.hover img {
+    width: 100%;
+    height: 280px;        /* same height for all */
+    object-fit: cover;    /* crops properly without stretching */
+}
