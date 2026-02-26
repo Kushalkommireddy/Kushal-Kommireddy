@@ -5,212 +5,239 @@
     <title>Kushal — Personal Portfolio Website</title>
     <link rel="icon" href="images/letter-k.png" type="image/gif" sizes="16x16">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- CSS Files -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/coloring.css" rel="stylesheet">
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet">
+
+    <!-- Modal Styling -->
+    <style>
+        .cert-img {
+            cursor: pointer;
+            transition: .3s;
+        }
+        .cert-img:hover {
+            transform: scale(1.05);
+        }
+        .cert-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+        }
+        .cert-modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85%;
+            max-height: 85vh;
+            animation: zoomIn .3s ease;
+        }
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 45px;
+            color: #fff;
+            font-size: 42px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(.7); opacity:0; }
+            to { transform: scale(1); opacity:1; }
+        }
+    </style>
 </head>
 
 <body class="dark-scheme">
-
 <div id="wrapper">
 
-    <div class="section-dark no-bottom no-top" id="content">
+<div class="section-dark no-bottom no-top" id="content">
 
-        <!-- Header Section -->
-        <section class="no-top">
-            <div class="text-fit-wrapper">
-                <h1 class="text-fit wow">Certificates</h1>
+<section class="no-top">
+<div class="text-fit-wrapper">
+<h1 class="text-fit wow">Certificates</h1>
 
-                <div class="d-menu-1 wow" data-wow-delay=".3s">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Me</a></li>
-                        <li><a href="services.html">What I Do</a></li>
-                        <li><a href="works.html">Works</a></li>
-                        <li class="active"><a href="blog.html">Certificates</a></li>
-                        <li><a href="contact.html">Hire Me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<div class="d-menu-1 wow" data-wow-delay=".3s">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Me</a></li>
+<li><a href="services.html">What I Do</a></li>
+<li><a href="works.html">Works</a></li>
+<li class="active"><a href="blog.html">Certificates</a></li>
+<li><a href="contact.html">Hire Me</a></li>
+</ul>
+</div>
+</div>
+</section>
 
-        <!-- Certificates Section -->
-        <section class="no-top">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-12 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="row g-4">
+<section class="no-top">
+<div class="container">
+<div class="row g-5">
+<div class="col-lg-12 wow fadeInUp" data-wow-delay=".3s">
+<div class="row g-4">
 
-                            <!-- Certificate 1 -->
-                            <div class="col-lg-6">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-sm-3">
-                                        <img src="images/HTMLcerttificate.png" class="img-fluid cert-img">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="mb-2">
-                                            <div class="d-inline fs-14 fw-bold me-3">Pearson IT Specialist</div>
-                                            <div class="d-inline fs-14 fw-600">11 May 2023</div>
-                                        </div>
-                                        <h4>HTML & CSS IT Specialist Certification</h4>
-                                    </div>
-                                </div>
-                            </div>
+<!-- Certificate Item -->
+<div class="col-lg-6">
+<div class="row g-4 align-items-center">
+<div class="col-sm-3">
+<img src="images/HTMLcerttificate.png" class="lazy cert-img" onclick="openModal(this.src)">
+</div>
+<div class="col-sm-9">
+<div class="mb-2">
+<div class="d-inline fs-14 fw-bold me-3">Pearson IT Specialist</div>
+<div class="d-inline fs-14 fw-600">11 May 2023</div>
+</div>
+<h4>HTML & CSS IT Specialist Certification</h4>
+</div>
+</div>
+</div>
 
-                            <!-- Certificate 2 -->
-                            <div class="col-lg-6">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-sm-3">
-                                        <img src="images/Python cert.png" class="img-fluid cert-img">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="mb-2">
-                                            <div class="d-inline fs-14 fw-bold me-3">Pearson IT Specialist</div>
-                                            <div class="d-inline fs-14 fw-600">11 May 2023</div>
-                                        </div>
-                                        <h4>Python IT Specialist Certification</h4>
-                                    </div>
-                                </div>
-                            </div>
+<div class="col-lg-6">
+<div class="row g-4 align-items-center">
+<div class="col-sm-3">
+<img src="images/Python cert.png" class="lazy cert-img" onclick="openModal(this.src)">
+</div>
+<div class="col-sm-9">
+<div class="mb-2">
+<div class="d-inline fs-14 fw-bold me-3">Pearson IT Specialist</div>
+<div class="d-inline fs-14 fw-600">11 May 2023</div>
+</div>
+<h4>Python IT Specialist Certification</h4>
+</div>
+</div>
+</div>
 
-                            <!-- Certificate 3 -->
-                            <div class="col-lg-6">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-sm-3">
-                                        <img src="images/c-essen.png" class="img-fluid cert-img">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="mb-2">
-                                            <div class="d-inline fs-14 fw-bold me-3">Cisco Netacad</div>
-                                            <div class="d-inline fs-14 fw-600">27 Jan 2023</div>
-                                        </div>
-                                        <h4>CLA – Programming Essentials in C</h4>
-                                    </div>
-                                </div>
-                            </div>
+<div class="col-lg-6">
+<div class="row g-4 align-items-center">
+<div class="col-sm-3">
+<img src="images/c-essen.png" class="lazy cert-img" onclick="openModal(this.src)">
+</div>
+<div class="col-sm-9">
+<div class="mb-2">
+<div class="d-inline fs-14 fw-bold me-3">Cisco Netacad</div>
+<div class="d-inline fs-14 fw-600">27 Jan 2023</div>
+</div>
+<h4>CLA – Programming Essentials in C</h4>
+</div>
+</div>
+</div>
 
-                            <!-- Certificate 4 -->
-                            <div class="col-lg-6">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-sm-3">
-                                        <img src="images/Intro_CCNA.png" class="img-fluid cert-img">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="mb-2">
-                                            <div class="d-inline fs-14 fw-bold me-3">Cisco Netacad</div>
-                                            <div class="d-inline fs-14 fw-600">30 Jul 2024</div>
-                                        </div>
-                                        <h4>Introduction to Cisco Networks</h4>
-                                    </div>
-                                </div>
-                            </div>
+<div class="col-lg-6">
+<div class="row g-4 align-items-center">
+<div class="col-sm-3">
+<img src="images/Intro_CCNA.png" class="lazy cert-img" onclick="openModal(this.src)">
+</div>
+<div class="col-sm-9">
+<div class="mb-2">
+<div class="d-inline fs-14 fw-bold me-3">Cisco Netacad</div>
+<div class="d-inline fs-14 fw-600">30 Jul 2024</div>
+</div>
+<h4>Introduction to Cisco Networks</h4>
+</div>
+</div>
+</div>
 
-                            <!-- Certificate 5 -->
-                            <div class="col-lg-6">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-sm-3">
-                                        <img src="images/python-essen.png" class="img-fluid cert-img">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="mb-2">
-                                            <div class="d-inline fs-14 fw-bold me-3">OpenEDG Python Institute</div>
-                                            <div class="d-inline fs-14 fw-600">16 May 2023</div>
-                                        </div>
-                                        <h4>PCAP: Programming Essentials in Python</h4>
-                                    </div>
-                                </div>
-                            </div>
+<div class="col-lg-6">
+<div class="row g-4 align-items-center">
+<div class="col-sm-3">
+<img src="images/python-essen.png" class="lazy cert-img" onclick="openModal(this.src)">
+</div>
+<div class="col-sm-9">
+<div class="mb-2">
+<div class="d-inline fs-14 fw-bold me-3">OpenEDG Python Institute</div>
+<div class="d-inline fs-14 fw-600">16 May 2023</div>
+</div>
+<h4>PCAP: Programming Essentials in Python</h4>
+</div>
+</div>
+</div>
 
-                            <!-- Certificate 6 -->
-                            <div class="col-lg-6">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-sm-3">
-                                        <img src="images/Intro_DS.png" class="img-fluid cert-img">
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="mb-2">
-                                            <div class="d-inline fs-14 fw-bold me-3">Cisco Netacad</div>
-                                            <div class="d-inline fs-14 fw-600">05 May 2023</div>
-                                        </div>
-                                        <h4>Introduction to Data Science</h4>
-                                    </div>
-                                </div>
-                            </div>
+<div class="col-lg-6">
+<div class="row g-4 align-items-center">
+<div class="col-sm-3">
+<img src="images/Intro_DS.png" class="lazy cert-img" onclick="openModal(this.src)">
+</div>
+<div class="col-sm-9">
+<div class="mb-2">
+<div class="d-inline fs-14 fw-bold me-3">Cisco Netacad</div>
+<div class="d-inline fs-14 fw-600">05 May 2023</div>
+</div>
+<h4>Introduction to Data Science</h4>
+</div>
+</div>
+</div>
 
-                           
+<!-- Coming Soon Line -->
+<div class="col-lg-12 text-center mt-4">
+<h5>More certifications coming soon... 🚀</h5>
+</div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Modal Structure -->
-    <div id="certModal" class="cert-modal">
-        <span class="close-btn">&times;</span>
-        <img class="cert-modal-content" id="modalImage">
-    </div>
-<!-- footer begin -->
-
-<footer>
+</div>
+</div>
+</div>
+</div>
+</section>
+    <footer>
     <div class="container-fluid">
         <div class="px-2">
             <div class="row g-4 align-items-center">
 
-```
-            <!-- Social / Profile Links -->
-            <div class="col-lg-6">
-                <div class="d-menu-1 wow" data-wow-delay=".3s">
-                    <ul>
-                        <li>
-                            <a href="https://www.linkedin.com/in/kushal-kommireddy-112931kk" target="_blank">
-                                LinkedIn
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://x.com/KushalKommired1" target="_blank">
-                                Twitter
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/kushal.chaitanya/" target="_blank">
-                                Instagram
-                            </a>
-                        </li>
-                    </ul>
+                <!-- Profile Links -->
+                <div class="col-lg-6">
+                    <div class="d-menu-1 wow" data-wow-delay=".3s">
+                        <ul>
+                            <li>
+                                <a href="https://linkedin.com/in/kushal-kommireddy-112931kk" target="_blank">
+                                    LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://x.com/KushalKommired1" target="_blank">
+                                    Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/kushal.chaitanya/" target="_blank">
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Call To Action -->
-            <div class="col-lg-6 text-lg-end">
-                <a href="contact.html">
-                    <h2 class="fs-84 fw-800 pe-3 shuffle wow fadeInLeft" data-wow-delay=".3s">
-                        Let's Talk
-                    </h2>
-                </a>
-            </div>
-
-        </div>
-    </div>
 </div>
-```
 
-</footer>
-<!-- footer close -->
+<!-- Modal -->
+<div id="certModal" class="cert-modal">
+<span class="close-btn" onclick="closeModal()">&times;</span>
+<img class="cert-modal-content" id="modalImage">
+</div>
 
 </div>
 
-<!-- JS Files -->
 <script src="js/plugins.js"></script>
 <script src="js/designesia.js"></script>
-<script src="js/script.js"></script>
+
+<script>
+function openModal(src){
+document.getElementById("certModal").style.display="block";
+document.getElementById("modalImage").src=src;
+}
+function closeModal(){
+document.getElementById("certModal").style.display="none";
+}
+window.onclick=function(e){
+let modal=document.getElementById("certModal");
+if(e.target==modal){modal.style.display="none";}
+}
+</script>
 
 </body>
 </html>
