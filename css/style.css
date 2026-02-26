@@ -9766,7 +9766,8 @@ i.bg-color-secondary {
 .fs-30{font-size: 30px;}
 .fs-32{font-size: 32px;}
 .fs-36{font-size: 36px;}
-.fs-40{font-size: 40px;}
+.fs-40{color: black;
+       font-size: 40px;}
 .fs-48{font-size: 48px;}
 .fs-56{font-size: 56px;}
 .fs-60{font-size: 60px;}
@@ -15742,3 +15743,4 @@ img {
     height: 280px;        /* same height for all */
     object-fit: cover;    /* crops properly without stretching */
 }
+
